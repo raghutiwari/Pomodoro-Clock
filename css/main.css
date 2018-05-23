@@ -1,0 +1,71 @@
+ @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
+body{
+	font-family: 'Comfortaa', cursive;
+	margin: 0;
+	font-size: 120%;
+	background: linear-gradient(to right, #8A2387, #E94057, #F27121);
+}
+
+
+.breakTimer, .workTimer{
+	display: inline-block;
+	width: auto !important;
+
+}
+#worktime{
+	padding: 1%;
+}
+.activecolor{
+	font-size: 130%;
+	color: lightgrey;
+	transition: all 0.5s;
+}
+.work_text, .break_text{
+	transition: all 0.5s;
+}
+.footer{
+	position: fixed;
+	text-align: center;
+	bottom: 0;
+	right: 0;
+	margin-top: 10px;
+}
+@media screen and (max-width: 360px) {
+
+    /*.home-featured .clock { margin: 0 auto; display: block; width: 322px; }*/
+    .home-featured h1 { font-size: 1.6em; }
+
+    .flip-clock-wrapper ul { height: 60px; line-height: 50px; margin: 3px; }
+    .flip-clock-wrapper ul li a div.up:after { top: 25px; }
+    .flip-clock-divider { height: 50px; }
+    .flip-clock-dot { height: 6px; width: 6px; left: 7px;}
+    .flip-clock-dot.top { top: 17px; }
+    .flip-clock-dot.bottom { bottom: 8px; }
+
+    .flip-clock-divider .flip-clock-label { font-size: 16px; }
+    .flip-clock-divider.days .flip-clock-label { right: -76px; }
+    .flip-clock-divider.hours .flip-clock-label { right: -70px; }
+    .flip-clock-divider.minutes .flip-clock-label { right: -64px; }
+    .flip-clock-divider.seconds .flip-clock-label { right: -70px; }
+
+    .flip-clock-wrapper ul { width: 17px; }
+    .flip-clock-wrapper ul li a div div.inn { font-size: 20px; }
+
+    /* Korekcja położenia pól zegara załamanych do nowej linii */
+    .flip-clock-wrapper ul { margin-bottom: 35px; }
+    .flip-clock-wrapper { margin-bottom: -15px; }
+    .footer{
+	z-index: -1;
+	opacity: 0;
+}
+
+}
+
+.flip-clock-divider.minutes { clear: none;}
+
+@media screen and (max-width: 340px) {
+
+    .flip-clock-divider.minutes { clear: left;} /* break clock at minutes */
+
+}
