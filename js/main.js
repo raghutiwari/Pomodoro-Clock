@@ -24,11 +24,13 @@ var breakTimer = $('.breakTimer').FlipClock(breakTime,{
 			interval: function(){
 				var break_time = breakTimer.getTime().time;
 				if(break_time==0){
+					$('#myAudio').get(0).play();
 					workTimer.setTime(parseInt($('#worktime').text()*60));
 					workTimer.start();
+					breakTimer.stop();	
 					breakTimer.setTime(parseInt($('#breaktime').text()*60)+1);
 					$('.break_text').removeClass('activecolor');
-					breakTimer.stop();					
+									
 				}
 			}
 		}
@@ -52,11 +54,13 @@ var workTimer = $('.workTimer').FlipClock(workTime,{
 			var time_work = workTimer.getTime().time;
 			
 			if(time_work==0){
+				$('#myAudio').get(0).play();
 				breakTimer.setTime(parseInt($('#breaktime').text()*60));
 				$('.break_text').addClass('activecolor');
 				breakTimer.start();
+				workTimer.stop();
 				workTimer.setTime(parseInt($('#worktime').text()*60)+1);
-				workTimer.stop()			
+							
 							}
 		}
 
@@ -108,11 +112,10 @@ var workTimer = $('.workTimer').FlipClock(workTime,{
 	});
 
 	$('#start').click(function(){
-		console.log(parseInt($('#breaktime').text()*60));
+
 		workTimer.start();
 		breakTimer.setTime(parseInt($('#breaktime').text()*60));
 		breakTimer.stop();
-	
 
 	});
 	$('#stop').click(function(){
